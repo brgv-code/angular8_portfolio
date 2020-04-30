@@ -1,0 +1,27 @@
+.cc-profile-image a:before {
+    content: "";
+    border: 15px solid rgb(37, 166, 217,0.8);
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    left: 0;
+    -webkit-animation: pulsate 1.6s ease-out;
+    animation: pulsate 1.6s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    opacity: 0.0;
+    z-index: 99;
+}
+
+
+.btn-primary {
+    background-color: rgb(37, 166, 217);
+    color: #FFFFFF;
+}
+.page-header:before {
+    background-color: rgba(0, 0, 0,0.1);
+}
+.bg-primary {
+    background-color: #25A6D9 !important;
+}
