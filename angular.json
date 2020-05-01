@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "personal-portfoli-angular": {
+    "angular8_portfolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/personal-portfoli-angular",
+            "outputPath": "dist/angular8_portfolio",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.scss"
@@ -69,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "personal-portfoli-angular:build"
+            "browserTarget": "angular8_portfolio:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "personal-portfoli-angular:build:production"
+              "browserTarget": "angular8_portfolio:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "personal-portfoli-angular:build"
+            "browserTarget": "angular8_portfolio:build"
           }
         },
         "test": {
@@ -117,15 +118,24 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "personal-portfoli-angular:serve"
+            "devServerTarget": "angular8_portfolio:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "personal-portfoli-angular:serve:production"
+              "devServerTarget": "angular8_portfolio:serve:production"
             }
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/angular8_portfolio",
+            "netlifyToken": "",
+            "siteId": "18068fb2-ccc5-4f7a-bb0c-34aded5168cd"
           }
         }
       }
-    }},
-  "defaultProject": "personal-portfoli-angular"
+    }
+  },
+  "defaultProject": "angular8_portfolio"
 }
