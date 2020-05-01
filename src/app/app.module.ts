@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ParticlesModule } from 'angular-particle';
+import {APP_BASE_HREF} from '@angular/common';
+
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
@@ -32,7 +34,7 @@ const config: ExtraOptions = {
     HttpClientModule,
     ParticlesModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '.'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
